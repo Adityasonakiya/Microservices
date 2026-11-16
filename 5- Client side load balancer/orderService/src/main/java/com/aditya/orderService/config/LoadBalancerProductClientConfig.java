@@ -18,11 +18,11 @@ public class LoadBalancerProductClientConfig {
                 factory.getLazyProvider("productService", ServiceInstanceListSupplier.class),
                 "productService");
 
-        // New RandomLoadBalancer(ServiceInstanceListSupplier, serviceId)
+        // 1-New RandomLoadBalancer(ServiceInstanceListSupplier, serviceId)
         // we pass serviceId because it mapped this algorithm to this service ID only.
         // So for "productService" only RandomLoadBalancer is used.
 
         // 2-ServiceInstanceListSupplier, is actually the one, which helps to invoke
-        // Service Discovery and ask for instances of "productService"
+        // Service Discovery and ask for instances of "productService"  
     }
 }

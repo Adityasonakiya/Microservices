@@ -23,6 +23,9 @@ public class OrderController {
     @Autowired 
     RestTemplate restTemplate;
 
+    @Autowired 
+    ProductClient productClient;
+
     @Value("${product.service.baseurl}")
     String productBaseUrl;
 
@@ -38,15 +41,13 @@ public class OrderController {
     }
 
     
-    // @GetMapping("2/{id}")
-    // public String getOrder2(@PathVariable String id) {
+    @GetMapping("2/{id}")
+    public String getOrder2(@PathVariable String id) {
 
-    //     String response=productClient.getProductById(id);
-
-    //     System.out.println("Response from product api: " + response);
-
-    //     return "Response from product class: " + response;
-    // }
+        String response=productClient.getProductById(id);
+        System.out.println("Response from product api: " + response);
+        return "Response from product class: " + response;
+    }
 
 
 }
